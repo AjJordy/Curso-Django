@@ -1,10 +1,14 @@
-# from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
+# from django.http import HttpResponse
 
 # Create your views here.
 
 
 def home(request):
 	print('home')
-	return HttpResponse('home do app')
+	# return HttpResponse('home do app')
+	return render(
+		request,
+		'home/index.html'
+	)
 
