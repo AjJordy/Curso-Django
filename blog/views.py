@@ -16,4 +16,7 @@ def blog(request):
 
 def exemplo(request):
 	print('exemplo')
-	return HttpResponse('exemplo do app')
+	return render(
+		request,
+		'blog/example.html'
+	)
