@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from blog.data import posts
 # Create your views here.
 # blog/
 
@@ -8,7 +8,7 @@ def blog(request):
 	print('blog')
 	context = {
 		'text': 'Olá blog',
-		'title': 'Blog'
+		'posts': posts
 	}
 	return render(
 		request,
