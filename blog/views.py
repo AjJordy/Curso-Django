@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse, Http404
 from blog.data import posts
+from typing import Any
 # Create your views here.
 # blog/
 
@@ -17,16 +18,20 @@ def blog(request):
 	)
 
 
-def post(request, post_id):
+def post(request: HttpRequest, post_id: int):
 	print('post', post_id)
-	found_post = None
+	found_post: dict[str, Any] | None = None
 	for post in posts:
 		if post['id'] == post_id:
 			found_post = post
 			break
 
+	if found_post is None:
+		raise Http404('Post não existe')
+
 	context = {		
-		'post': found_post
+		'post': found_post,
+		'title': found_post['title'] + ' - '
 	}
 	return render(
 		request,
