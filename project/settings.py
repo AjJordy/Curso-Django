@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-igtlmk9tui2u&i7w#x8@jar3+b%bxjp-7i+=4bxxp!a27(+-6)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -118,6 +120,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+# > python manage.py collectstatic
+# https://whitenoise.readthedocs.io/en/latest/
+# > pip install whitenoise
+STATIC_ROOT = BASE_DIR / 'static_files'
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
