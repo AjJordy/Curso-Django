@@ -6,9 +6,14 @@ from django.http import HttpResponse
 
 def blog(request):
 	print('blog')
+	context = {
+		'text': 'Olá blog',
+		'title': 'Blog'
+	}
 	return render(
 		request,
-		'blog/index.html'
+		'blog/index.html',
+		context
 	)
 
 
@@ -16,7 +21,12 @@ def blog(request):
 
 def exemplo(request):
 	print('exemplo')
+	context = {
+		'text': 'Olá Exemplo',
+		'title': 'Exemplo'
+	}
 	return render(
 		request,
-		'blog/example.html'
+		'blog/example.html',
+		context
 	)

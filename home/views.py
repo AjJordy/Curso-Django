@@ -9,6 +9,10 @@ def home(request):
 	# return HttpResponse('home do app')
 	return render(
 		request,
-		'home/index.html'
+		'home/index.html',
+		context={
+			'text': 'Estamos na home',
+			'title': 'Home'
+		}
 	)
 
