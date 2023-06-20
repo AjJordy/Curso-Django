@@ -1,0 +1,22 @@
+{	
+	"editor.rulers": [80],
+	"editor.fontSize": 18,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.fixAll.unusedImports": true,
+		"source.organizeImports": true,
+	},
+	"editor.fontFamily": "Fira Code", //, Consolas, 'Dank Mono', 'Courier New', monospace",
+	"editor.fontLigatures": true,
+	"python.analysis.typeCheckingMode": "basic",
+	"python.languageServer": "Pylance",
+	"python.formatting.autopep8Args": [
+		"--indent-size=4",
+		"--max-line-length=80",
+	],
+	"code-runner.executorMap": {
+		"python": "clear; .\\venv\\Scripts\\activate.bat; python $fullFileName",
+	},
+	"code-runner.runInTerminal": true,
+	"code-runner.clearPreviousOutput": true,
+}
